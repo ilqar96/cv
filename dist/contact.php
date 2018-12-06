@@ -1,3 +1,58 @@
+<?php
+  // Message Vars
+  $msg = '';
+  $msgClass = '';
+
+  // Check For Submit
+  if(filter_has_var(INPUT_POST, 'submit')){
+    // Get Form Data
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['text']);
+
+    // Check Required Fields
+    if(!empty($email) && !empty($name) && !empty($message)){
+      // Passed
+      // Check Email
+      if(filter_var($email, FILTER_VALIDATE_EMAIL) === false){
+        // Failed
+        $msg = 'Please use a valid email';
+        $msgClass = 'alert-danger';
+      } else {
+        // Passed
+        $toEmail = 'ilqar.huseynli.9686@gmail.com';
+        $subject = 'Contact Request From '.$name;
+        $body = '<h2>Contact Request</h2>
+          <h4>Name</h4><p>'.$name.'</p>
+          <h4>Email</h4><p>'.$email.'</p>
+          <h4>Message</h4><p>'.$message.'</p>
+        ';
+
+        // Email Headers
+        $headers = "MIME-Version: 1.0" ."\r\n";
+        $headers .="Content-Type:text/html;charset=UTF-8" . "\r\n";
+
+        // Additional Headers
+        $headers .= "From: " .$name. "<".$email.">". "\r\n";
+
+        if(mail($toEmail, $subject, $body, $headers)){
+          // Email Sent
+          $msg = 'Email göndərildi';
+          $msgClass = 'alert-success';
+        } else {
+          // Failed
+          $msg = 'email ünvanı keçərli deyil';
+          $msgClass = 'alert-danger';
+        }
+      }
+    } else {
+      // Failed
+      $msg = 'Bütün sahələri doldurun';
+      $msgClass = 'alert-danger';
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,13 +116,16 @@
       Mənimlə
       <span class="text-secondary"> Əlaqə Saxla</span>
     </h1>
+    <?php if($msg != ''): ?>
+        <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
+    <?php endif; ?>
 
     <div class="contact-grid">
       <div class="contact-form">
         <h2 class="sm-heading">
           Mesaj yaz...
         </h2>
-        <form action="" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
           <div class="form-component">
             <label for="name">Ad *</label>
             <input name="name" type="text" placeholder="Adinizi daxil edin..">
