@@ -35,13 +35,13 @@ function toggleMenu() {
 
 // preloader jquery function
 
-// $(window).on("load", function () {
-//   $(".preloader").addClass("complete");
-// });
-
 $(window).on("load", function () {
-  $(".preloader").fadeOut(2500);
+  $(".preloader").addClass("complete");
 });
+
+// $(window).on("load", function () {
+//   $(".preloader").fadeOut(2500);
+// });
 
 
 // progress bar jquery 
