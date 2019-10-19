@@ -9,7 +9,9 @@
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/main.css">
-  <title>İLQAR HUSEYNLİ</title>
+  <title>İlqar Hüseynli</title>
+
+
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         <div class="portrait"></div>
       </div>
       <ul class="menu-nav">
-        <li class="nav-item current">
+        <li class="nav-item">
           <a href="index.html" class="nav-link">
             Ana səhifə
           </a>
@@ -45,7 +47,7 @@
             İşlərim
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item current">
           <a href="contact.html" class="nav-link">
             Mənimlə Əlaqə
           </a>
@@ -54,50 +56,51 @@
     </nav>
   </header>
 
-  <main id="work">
+  <main id="contact">
     <h1 class="lg-heading">
-      İşlərim
-      <span class="text-secondary"><i class="fas fa-edit"></i></span>
+      Mənimlə
+      <span class="text-secondary"> Əlaqə Saxla</span>
     </h1>
-    <h2 class="sm-heading">
-      ...
-    </h2>
-    <div class="projects">
-      <div class="item">
-        <a href="https://github.com/ilqar96/cv_front">
-          <img src="img/projects/Frontend.jpg" alt="Project">
-        </a>
-        <a href="https://github.com/ilqar96/cv_front" class="btn-light">
-          <i class="fas fa-eye"></i> Front
-        </a>
-        <a href="https://github.com/ilqar96/cv_front" class="btn-dark">
-          <i class="fab fa-github"></i> Github
-        </a>
-      </div>
-      <div class="item">
-        <a href="https://github.com/ilqar96/LaravelPortfolio">
-          <img src="img/projects/laravel2-1.png" alt="Project">
-        </a>
-        <a href="https://github.com/ilqar96/LaravelPortfolio" class="btn-light">
-          <i class="fas fa-eye"></i> Laravel
-        </a>
-        <a href="https://github.com/ilqar96/LaravelPortfolio" class="btn-dark">
-          <i class="fab fa-github"></i> Github
-        </a>
+
+
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h2 class="sm-heading">
+          Mesaj yaz...
+        </h2>
+        <form action="" method="POST">
+          <div class="form-component">
+            <label for="name">Ad *</label>
+            <input name="name" type="text" placeholder="Adinizi daxil edin..">
+          </div>
+          <div class="form-component">
+            <label for="email">Email *</label>
+            <input name="email" type="email" placeholder="Email daxil edin..">
+          </div>
+          <div class="form-component">
+            <label for="name">Mətin *</label>
+            <textarea name="text" cols="30" rows="7"></textarea>
+          </div>
+          <input type="submit" value="Göndər" name="submit" class="btn">
+        </form>
       </div>
 
-      <div class="item">
-        <a href="https://github.com/ilqar96/symf_blog_learn">
-          <img src="img/projects/symfony.width-808 (1).jpg" alt="Project">
-        </a>
-        <a href="https://github.com/ilqar96/symf_blog_learn" class="btn-light">
-          <i class="fas fa-eye"></i> Symfony
-        </a>
-        <a href="https://github.com/ilqar96/symf_blog_learn" class="btn-dark">
-          <i class="fab fa-github"></i> Github
-        </a>
+      <div class="contact-info">
+        <div class="contact-img">
+          <img src="img/Hipster-Developer-Dice.jpg">
+        </div>
+        <div class="communication">
+          <h3 class="text-secondary">Əlaqə vasitələri</h3>
+          <p><i class="fas fa-map-marker-alt"></i> &nbsp;&nbsp;Baki s, Qaradag ray</p>
+
+          <p><i class="fas fa-phone"></i>&nbsp;&nbsp; +99577-544-89-96</p>
+          <p><i class="fas fa-envelope"></i>&nbsp;&nbsp; ilqar.huseynli.9686@gmail.com</p>
+          <!-- <p><i class="fas fa-globe"></i>&nbsp;&nbsp; ilqar.huseynli.com</p> -->
+        </div>
       </div>
     </div>
+
+
   </main>
 
   <footer id="main-footer">
